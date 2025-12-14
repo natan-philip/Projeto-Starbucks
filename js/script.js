@@ -5,21 +5,6 @@ const icon = document.querySelector('.btn-mobile i');
 
 mobileBtn.addEventListener('click', () => {
     navLinks.classList.toggle('show');
-    icon.classLinst.toggle('fa-bars');
     icon.classList.toggle('fa-times');
+    icon.classList.toggle('fa-bars');
 })
-
-
-/*
-function transformarCarreira() {
-  const FrontEnd = {
-    nome: "Natan Philip";
-    status: "Junior";
-    sonho: "Programador Full-Stack"
-  }
-  
-  return DevClub.formar(Front-End)
-    .then(dev => dev.conquistarMercado())
-    console.log("Aprovado!")
-}
-*/

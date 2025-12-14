@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href=".css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Projeto Starbucks</title>
 </head>
 <body>
@@ -15,11 +15,11 @@
             <button class="btn btn-mobile">
                 <i class="fa-solid fa-bars"></i>
             </button>
-            <ul id="nav-links" class="show"> 
+            <ul id="nav-links"> 
                 <li><a href="#home">Home</a></li>
-                <li><a href="#trending">Em alta</a></li>
-                <li><a href="#about">Sobre nos</a></li>
-                <li><a href="#products">Novidades</a></li>
+                <li><a href="#em-alta">Em Alta</a></li>
+                <li><a href="#sobre">Sobre nos</a></li>
+                <li><a href="#novidade">Novidades</a></li>
             </ul>
             <a href="#" class="btn btn-default">Contatar</a>
         </nav>
@@ -27,18 +27,70 @@
 
     <!-- MAIN -->
     <main id="container">
-        <!-- HOME -->
-         <section id="home">
-            <img class="home-image" src="./images/detail.png" alt="Drinks Starbucks"/>
-            <h1 class="home-title">Mais que um café, uma <span>experiência.</span></h1>
-            <p class="home-description">Descubra cafés icônicos, sabores únicos e a energia perfeita para cada parte do seu dia.</p>
+        <!-- HERO COM CHAMADA DE ACAO -->
+         <section id="hero">
+            <img class="hero-image" src="./images/detail.png" alt="Drinks Starbucks"/>
+            <h1 class="hero-title">Mais que um café, uma <span>experiência.</span></h1>
+            <p class="hero-description">Descubra cafés icônicos, sabores únicos e a energia perfeita para cada parte do seu dia.</p>
 
-            <div class="home-actions">
-                <a href="#" class="btn btn-default">Conehcer</a>
+            <div class="hero-actions">
+                <a href="#" class="btn btn-default">Conhecer</a>
                 <a href="#" class="btn btn-outlined">Contatar</a>
-
             </div>
          </section>
+        <!-- SECAO EM ALTA -->
+        <section id="em-alta">
+            <h2 class="titulo-secao">Produtos <span>Em Alta</span></h2>
+            <!-- ITENS EM ALTA -->
+            <div class="cards-em-alta">
+                <div class="item-em-alta">
+                    <img src="./images/itens/card1.png" alt="Starbucks Drink Capuccino de Avela" class="imagem-iten">
+                    <div class="avaliacao">
+                        <p>5 <i class="fa-solid fa-star"></i></p>
+                    </div>
+                    <p class="descricao-iten">
+                        Capuccino de <span class="titulo-iten">Avelã</span>
+                    </p>
+                </div>
+                <div class="item-em-alta">
+                    <img src="./images/itens/card2.png" alt="Starbucks Drink Capuccino de Pistache" class="imagem-iten">
+                    <div class="avaliacao">
+                        <p>5 <i class="fa-solid fa-star"></i></p>
+                    </div>
+                    <p class="descricao-iten">
+                        Capuccino de <span class="titulo-iten">Pistache</span>
+                    </p>
+                </div>
+                <div class="item-em-alta">
+                    <img src="./images/itens/card3.png" alt="Starbucks Drink Capuccino de Morango" class="imagem-iten">
+                    <div class="avaliacao">
+                        <p>5 <i class="fa-solid fa-star"></i></p>
+                    </div>
+                    <p class="descricao-iten">
+                        Capuccino de <span class="titulo-iten">Morango</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- SECAO SOBRE NÓS -->
+        <section id="sobre">
+            <h2 class="titulo-secao">Sobre <span>nós</span></h2>
+            <div class="content-sobre">
+                <img src="./images/about/about-us.png" alt="sobre a starbucks" class="img-sobre">
+                <div class="info-sobre">
+                    <h3>Conhecendo nossa <span>história</span></h3>
+
+                    <p>Desde o início, nossa paixão pelo café nos inspira a oferecer experiências únicas em cada xícara.
+                        Com <span>grãos selecionados</span> e preparo artesanal, buscamos unir qualidade, sabor e acolhimento em um só lugar. Aqui, cada detalhe é pensado para transformar o seu momento de café em algo especial.</p>
+                </div>
+                <div class="info-sobre">
+                    <h3>Nosso <span>propósito</span></h3>
+
+                    <p>Inspirar momentos de conexão e bem-estar por meio do café. Acreditamos que cada xícara pode aproximar pessoas, despertar ideias e transformar rotinas.<span> Nosso compromisso</span> é oferecer qualidade, sustentabilidade e experiências que tornem o seu dia mais leve e especial.</p>
+                </div>
+            </div>
+        </section>
+
 
     </main>
 
