@@ -131,34 +131,50 @@ a {
 .btn btn-default {
     display: none;
 }
+/* Animação do botão mobile e transição do menu */
+.btn-mobile {
+    transition: transform 0.28s ease, background-color 0.22s ease;
+    border-radius: 10px;
+    padding: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
 
-@media (min-width: 769px) {
-    header {
-       .navbar {
-        .btn-mobile {
-            display: none;
-        }
+.btn-mobile i {
+    transition: transform 0.35s cubic-bezier(.2,.8,.2,1), color 0.22s ease;
+    transform-origin: center;
+}
 
-        ul {
-           display: flex;
-           flex-direction: row;
-           position: static;
-           gap: 1rem;
-           width: auto;
-           padding: 0; 
-        }
-        .btn-default {
-            display: block;
-        }
-       } 
-    }
+.btn-mobile.open {
+    background-color: rgba(52,129,93,0.08);
+    transform: scale(1.03);
+}
+
+.btn-mobile.open i {
+    transform: rotate(90deg) scale(1.05);
+    color: var(--color-primary-3);
+}
+
+/* animação de abertura do menu (mobile) */
+ul {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.28s ease;
+    opacity: 0;
+    display: block;
+}
+
+ul.show {
+    max-height: 420px;
+    opacity: 1;
+    box-shadow: 1px 6px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* SECAO HERO / SECAO MAIN */
 #container {
     background-image: url('../images/background-mobile.png');
     background-size: contain;
-    height: 400vh;
 }
 
 .titulo-secao {
@@ -176,7 +192,7 @@ a {
         bottom: 0;
         right: 0;
         content: '';
-        width: 60px;
+        width: 84px;
         height: 4px;
         background-color: var(--color-primary-1);
         border-radius: 30px;
@@ -227,7 +243,6 @@ span {
 }
 
 /* SECAO EM ALTA */
-
 #em-alta {
     display: flex;
     flex-direction: column;
@@ -274,7 +289,174 @@ span.titulo-iten {
     color: var(--color-primary-3);
 }
 
-@media screen and (min-width: 769px) {
+/* SECAO SOBRE */
+#sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-primary-1);
+    background-image: url('../images/sobre/bg-about.png');
+    min-height: calc(100vh - 96px);
+    padding: 32px 4%;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+
+    h2 {
+        color: var(--color-neutral-1);
+        text-shadow: 1px 1px 4px #1e0e052f;
+    
+        &::after {
+            background-color: var(--color-secondary-1);
+            width: 84px;
+        }
+        
+        span {
+            color: var(--color-secondary-1);
+        }
+    }
+
+}
+
+.content-sobre {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 24px;
+}
+
+.img-sobre {
+    width: clamp(300px, 50vw, 500px);
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+.info-sobre {
+    padding: 24px;
+    border-radius: 20px;
+    background-color: var(--color-primary-2);
+    box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.2);
+
+    h3 {
+        color: var(--color-neutral-1);
+        font-size: 1.8rem;
+        text-shadow: 0.5px 1px 4px #1e0e0563;
+
+        span {
+            color: var(--color-secondary-1);
+        }
+    }
+
+    p {
+        color: var(--color-neutral-1);
+        font-size: 1rem;
+        
+        span {
+            color: var(--color-secondary-1);
+            font-weight: 600;
+        }
+    }
+}
+/* SECAO PRODUTOS */
+#produtos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 8%;
+    gap: 58px;
+}
+
+.cards-produtos {
+    display: flex;
+    flex-direction: column;
+    gap: 58px;
+}
+
+.item-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary-1);
+    background-image: url('../images/produtos/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    box-shadow: 1.5px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+}
+
+.prod-img {
+    width: clamp(300px, 50vw, 300px);
+    position: relative;
+    top: -80px;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+.container-produto {
+    margin-top: -70px;
+
+    h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--color-neutral-1);
+        font-size: 1.3rem;
+        line-height: 27px;
+        text-shadow: 0.5px 1px 4px #1e0e0532;
+
+        span {
+            color: var(--color-neutral-7);
+            font-size: 1.8rem;
+        }
+    }
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--color-primary-1);
+    color: var(--color-neutral-1);
+    text-align: center;
+    padding: 12px;
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 768px) {
+    .btn-mobile {
+        display: none;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        gap: 3rem;
+        width: auto;
+        padding: 0;
+        /* restaurar comportamento desktop (anula a animação mobile) */
+        max-height: none;
+        overflow: visible;
+        opacity: 1;
+        transition: none;
+    }
+    .btn-default {
+        display: block;
+        } 
+
+
+    #container {
+        background-image: url('../images/background-desktop.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: start;
+    }
+
+    #em-alta {
+        min-height: 80vh;
+    }
     .cards-em-alta {
         display: flex;
         flex-wrap: wrap;
@@ -282,4 +464,44 @@ span.titulo-iten {
         gap: 3.125rem;
     }
     
+    #produtos {
+        min-height: 100vh;
+        gap: 8rem;
+    }
+
+    .cards-produtos {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+        
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    #sobre {
+        margin: 4%;
+        justify-content: center;
+    }
+
+    .content-sobre {
+        flex-direction: row;
+        align-items: center;
+        gap: 50px;
+    }
+    
+    .img-sobre {
+        order: 1;
+    }
+    
+    .info-sobre:first-child {
+        order: 2;
+    }
+
+    .info-sobre:last-child {
+        order: 3;
+    }
 }
